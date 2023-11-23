@@ -12,7 +12,6 @@ app.use(cors());
 app.use("/auth", userRouter);
 
 mongoose.connect(
-    "mongodb+srv://Group4:WebAppDevCOMP229@userdata.zgbrtd1.mongodb.net/UserData?retryWrites=true&w=majority"
-    );
+    'mongodb+srv://Group4:WebAppDevCOMP229@userdata.zgbrtd1.mongodb.net/UserData?retryWrites=true&w=majority');
 
 app.listen(3001, () => console.log("Server Started"));

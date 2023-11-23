@@ -11,8 +11,6 @@ const UserSchema = new mongoose.Schema({
     password: {type: String, required: true },
     created: {type: Date, default: Date.now},
     updated: {type: Date, default: Date.now},
-    hashed_password: {type: String,required: 'Password is required'},
-    salt: String
 });
 
 export const UserModel = mongoose.model("users", UserSchema)
