@@ -1,0 +1,112 @@
+/*app.css*/
+/* Basic Styling */
+body {
+  font-family: 'Arial', sans-serif;
+  background-color: #f0f0f0;
+  color: #333;
+  margin: 0;
+  /* added margin to take away white space at the top*/
+
+}
+
+/*navbar.js*/
+/* Navigation Bar */
+nav {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  background-color: #262626;
+  padding: 10px;
+}
+
+/* Logo*/
+nav img {
+  width: 100px;
+  height: auto;
+  margin-right: auto;
+}
+
+nav ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+}
+
+nav li {
+  margin-left: 10px;
+}
+
+nav a {
+  text-decoration: none;
+  color: white;
+  padding: 8px;
+  border-radius: 4px;
+}
+
+nav a:hover,
+nav a.active {
+  background-color: #F2668B;
+  transition: 650ms;
+}
+
+/*auth.js */
+/*Login/Register page */
+form {
+  max-width: 500px;
+  margin: auto;
+  background-color: #f9f9f9;
+  border-radius: 10px;
+  padding: 20px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-bottom: 20px;
+  margin-top: 20px;
+}
+
+input,
+select,
+textarea {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  font-size: 16px;
+  margin-bottom: 20px;
+}
+
+button[type="submit"],
+button[type="button"] {
+  background-color: #F2668B;
+  color: white;
+  padding: 15px 20px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 650ms;
+
+}
+
+button[type="submit"]:hover,
+button[type="button"]:hover {
+  background-color: #D95F5F;
+
+}
+
+/* home.js */
+.title {
+  font-size: 3rem;
+  font-weight: bold;
+  text-align: center;
+  margin-top: 30vh;
+}
+
+.slogan {
+  font-size: 1.5rem;
+  text-align: center;
+  color: #555;
+  margin-top: 20px;
+}
+
