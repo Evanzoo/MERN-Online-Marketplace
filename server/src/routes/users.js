@@ -5,7 +5,7 @@ import { UserModel } from "../models/Users.js";
 import verifyToken from "../middleware/authMiddleware.js";
 
 const router = express.Router();
-
+//create
 router.post("/register", async (req, res) => {
     const { username, email, password } = req.body;
 
@@ -22,7 +22,7 @@ router.post("/register", async (req, res) => {
 
     res.json({message: "Successfully Registered User!"});
 });
- 
+ //sign in user
 router.post("/login", async (req, res) => {
     const { username, password } = req.body;
     const user = await UserModel.findOne({ username });
@@ -40,6 +40,9 @@ router.post("/login", async (req, res) => {
     res.json({token, userID: user._id});
 });
 
+//router.use(verifyToken);
+
+//list all users
 router.get("/", async (req, res) => {
     try {
         const users = await UserModel.find();
@@ -49,7 +52,7 @@ router.get("/", async (req, res) => {
         res.status(500).json({ message: "Internal Server Error" });
     }
 });
-
+//fetch by id
 router.get("/:userId", async (req, res) => {
     const userId = req.params.userId;
 
@@ -64,8 +67,8 @@ router.get("/:userId", async (req, res) => {
         res.status(500).json({ message: "Internal Server Error" });
     }
 });
-//router.use(verifyToken);
 
+//update user
 router.put("/:userId", async (req, res) => {
     const userId = req.params.userId;
     const { username, email, password } = req.body;
@@ -88,7 +91,7 @@ router.put("/:userId", async (req, res) => {
         res.status(500).json({ message: "Internal Server Error" });
     }
 });
-
+//delete account
 router.delete("/:userId", async (req, res) => {
     const userId = req.params.userId;
 
