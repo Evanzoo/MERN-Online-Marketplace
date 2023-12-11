@@ -5,7 +5,7 @@ import { UserModel } from "../models/Users.js";
 import verifyToken from "../middleware/authMiddleware.js";
 
 const router = express.Router();
-//Create User rest api
+//create
 router.post("/register", async (req, res) => {
     const { username, email, password } = req.body;
 
@@ -22,7 +22,7 @@ router.post("/register", async (req, res) => {
 
     res.json({message: "Successfully Registered User!"});
 });
-//sign user api
+ //sign in user
 router.post("/login", async (req, res) => {
     const { username, password } = req.body;
     const user = await UserModel.findOne({ username });
@@ -39,6 +39,9 @@ router.post("/login", async (req, res) => {
     const token = jwt.sign({id: user._id }, "secret");
     res.json({token, userID: user._id});
 });
+
+//router.use(verifyToken);
+
 //list all users
 router.get("/", async (req, res) => {
     try {
@@ -65,9 +68,7 @@ router.get("/:userId", async (req, res) => {
     }
 });
 
-//router.use(verifyToken);
-//Update User
-
+//update user
 router.put("/:userId", async (req, res) => {
     const userId = req.params.userId;
     const { username, email, password } = req.body;

@@ -1,11 +1,36 @@
 import mongoose from 'mongoose';
+import multer from 'multer';
 
-const productSchema = new mongoose.Schema({
-  name: { type: String, required: true },
-  description: { type: String, required: true },
-  price: { type: String, required: true },
-});
+const storage = multer.diskStorage({
+    destination: function (req, file, cb) {
+      cb(null, 'uploads/');
+    },
+    filename: function (req, file, cb) {
+      cb(null, file.originalname);
+    },
+  });
+  
 
-const Product = mongoose.model('Product', productSchema);
+const ProductSchema = new mongoose.Schema({
+    name: {
+        type: String,
+        required: true,
+    },
+    description: {
+        type: String,
+    },
+    price: {
+        type: Number,
+        required: true,
+    },
+    imageUrl: {
+        type: String,
+    },
+    },
+    {
+        timestamps: true
+    }
+);
 
-export default Product;
+export const ProductModel = mongoose.model("productForm", ProductSchema);
+export const upload = multer({ storage: storage });
