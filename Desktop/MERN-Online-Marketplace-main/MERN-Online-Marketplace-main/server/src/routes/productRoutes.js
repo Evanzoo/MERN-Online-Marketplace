@@ -1,9 +1,10 @@
+// routes/productRoutes.js
 import express from 'express';
-import { ProductModel, upload } from '../models/Products';
+import { ProductModel } from '../models/products'; // Remove 'upload' import
 
 const router = express.Router();
 
-router.post('/upload', upload.single('image'), async (req, res) => {
+router.post('/upload', async (req, res) => { // Remove 'upload.single('image')' middleware
   try {
     const { name, description, price } = req.body;
     const imageUrl = req.file.path;

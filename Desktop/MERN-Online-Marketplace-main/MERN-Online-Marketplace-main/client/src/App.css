@@ -112,3 +112,34 @@ button[type="button"]:hover {
   margin-top: 20px; 
 }
 
+/* Imaginary Product Card Please feel free to change it how you want it */
+/* styles.css */
+
+.product-card {
+  width: 200px; /* Set a suitable width for your product card */
+  border: 1px solid #ccc;
+  padding: 10px;
+  text-align: center;
+  margin: 10px;
+}
+
+.product-image {
+  max-width: 100%;
+  height: auto;
+}
+
+.product-title {
+  font-weight: bold;
+  margin-top: 10px;
+}
+
+.product-description {
+  margin-top: 5px;
+}
+
+.product-price {
+  font-weight: bold;
+  margin-top: 10px;
+  color: #007bff; /* Set the best color for the price, I was thinking maybe black or a strong dark pink/ magenta*/
+}
+

@@ -3,6 +3,7 @@ import cors from "cors";
 import mongoose from "mongoose";
 import {userRouter} from "./routes/users.js";
 import productRoutes from './routes/productRoutes.js';
+import { ProductModel, upload } from '../models/products';
 
 const multer = require('multer');
 

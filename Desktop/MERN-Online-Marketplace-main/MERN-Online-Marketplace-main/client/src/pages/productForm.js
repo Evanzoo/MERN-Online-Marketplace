@@ -1,7 +1,8 @@
 import React, { useState } from 'react';
 import axios from 'axios';
 
-const ProductForm = () => {
+
+export const ProductForm = () => {
   const [product, setProduct] = useState({
     name: '',
     description: '',
