@@ -20,7 +20,7 @@ export const NavBar = () => {
             <img src="/logo.png" id="logo" alt="Logo" />
             
             <Link to="/"> Home </Link>
-            <Link to="/products"> Products </Link>
+            <Link to="../pages/productForm"> Create Product </Link>
             
             {!cookies.access_token ? (<Link to="/auth"> Login/Register </Link>
             ) : (
